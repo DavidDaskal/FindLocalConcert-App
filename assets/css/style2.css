@@ -1,0 +1,207 @@
+body {
+	background-image: url(../images/concert-background.jpeg);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+#upcoming-container {
+	width: 100%;
+}
+#upcoming {
+	padding-top: 25px;
+	width: 820px;
+	margin: 0 auto;
+	background-color: rgba(255,255,255,.85);
+	border:3px solid black;
+	border-radius: 15px;
+	box-shadow: 0px 0px 20px 5px black inset;
+}
+
+#upcoming > h2 {
+	font-size: 4.5em;
+
+	background-color: rgba(0,0,0,.6);
+	border-radius: 15px;
+	padding: 10px;
+	display: inline-block;
+	text-shadow: none;
+}
+
+#panelOne, #panelTwo {
+	width: 407px;
+}
+
+#panelOne {
+	float: left;
+	padding-top: 10px;
+}
+
+#panelTwo {
+	float: right;
+}
+
+.inputState {
+	margin-left: 30px;
+	margin-bottom: 20px;
+}
+
+.divide {
+	border-top:3px solid rgba(0,0,0,.5);
+}
+
+.maps ~ .divide {
+	margin: -5px 0;	
+}
+
+.showCard ~ .divide {
+	margin: 5px 0;
+}
+
+label + input {
+	background-color: rgba(250,250,250,.5) !important;
+	color: white !important;
+	text-align: center;
+}
+
+
+.clearfix {
+	clear: both;
+}
+
+.showCard {
+	width: 340px;
+	height:230px;
+	display: inline-block;
+	margin: 10px;
+	border-radius: 0px;
+	padding: 10px;
+	text-align: center;
+	vertical-align: bottom;
+	position: relative;
+	font-family: 'Raleway', san-serif;
+	box-shadow: 5px 5px 15px 1px black;
+	color: white;
+}
+
+.showCard a {
+	color: white;
+}
+
+.available {
+	background-color: rgba(0,16,0,.8);
+}
+
+.unavailable {
+	background-color: rgba(16,5,5,.8);
+}
+
+.buyTicket {
+	font-size: 1.3em;
+	font-weight: 700;
+	background-color: rgba(0,0,0,.2);
+	border-radius: 10px;
+	padding:5px;
+}
+
+#tabs {
+	 text-shadow: none;
+}
+
+.showCard > div {
+	margin: 5px auto;
+	width: 300px;
+	text-shadow: none;
+}
+
+.cardVenue::-webkit-scrollbar, .cardDate::-webkit-scrollbar, .cardName::-webkit-scrollbar { 
+    display: none; 
+}
+
+.cardName {
+	font-size: 1.9em;
+	font-weight: bold;
+	color: white;
+	padding: 5px;
+	background-color: rgba(0,0,0,.3);
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px 1px black inset;
+	height: 48px;
+	overflow-y: scroll;
+	white-space: nowrap;
+}
+
+.cardDate {
+	border-top:2px solid black;
+	border-bottom:2px solid black;
+	background: radial-gradient(rgba(255,255,255,.7), rgba(255,255,255,.1), rgba(255,255,255,0));
+	height: 33px;
+	overflow-x: scroll;
+	white-space: nowrap; 
+}
+
+.cardVenue {
+	font-size: 1.2em;
+	width: 270px;
+    height: 80px;
+    line-height: 40px;
+    padding: 0px 5px;
+    text-align: center;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 15px;
+    color: white;
+    overflow-x: scroll;
+    box-shadow: 0px 0px 5px 1px black inset;
+    border:1px solid rgba(0,0,0,.5);
+}
+
+.cardLocation {
+	width: 270px !important;
+	position: absolute;
+	font-size: 1.2em;
+	bottom: 35px;
+}
+
+.cardTicket {
+	width: 320px !important;
+	position: absolute;
+	bottom: 5px;
+}
+
+.showCard > div > p {
+	margin: 0px;
+	vertical-align: middle;
+    line-height: 33px;
+    display: inline-block;
+}
+
+.maps {
+	width: 340px;
+	height: 230px;
+	margin: 20px;
+	padding: 10px;
+	box-shadow: -5px 5px 10px 1px black;
+	opacity: .8;
+}
+
+.input-container {
+   
+    float: left;
+    width: 32rem;
+    padding-top: 23px;
+    display: block;
+}
+
+.wrapper-container {
+	padding-top: 8rem;
+
+}
+
+@font-face {
+font-family: kilogram;
+src: url("../images/KiloGram_KG.otf") format("opentype");
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico"> <!--Replace this with an approriate logo.-->
+
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
+  <script type="text/javascript" src="assets/script/jquery-2.2.0.js"></script>  
+  <script type="text/javascript" src="assets/script/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/script/moment.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnxgE3AHJO1iESalw0NdaeSX0qHmBkP-A&callback=initMap"></script>
+  <script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble.js"></script>
+  
+  <title>Concertch</title>
+</head>
+ <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Concertch</h3>
+            </div>
+          </div>
+
+           <div class="container-fluid wrapper-container">  
+            <h1 class="cover-heading">Concertch is your place to locate your favorite bands and venues</h1>
+            <p class="lead">Enter an Artist and/or Location to search</p>
+            <div class="lead">
+              <form id="search">
+                <div class="form-group">
+                  <label for="artist">Artist:</label>
+                  <input type="text" id="artist" class="form-control"></input>
+                  <div class="input-container">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" size='30' class="form-control"></input>
+                  </div>
+                  <div class="input-container inputState">
+                    <label for="state">State:</label>
+                    <input type="text" id="state" size='30' class="form-control">
+                  </div>
+                  
+                </div>
+                <button id="userlocation" class="btn btn-primary">Use my location</button>
+                <input type="submit" id="submitButton" class="btn btn-success" />
+              </form>
+          </div>
+        </div>
+        </div>
+          <div id="upcoming-container">
+            <div id="upcoming">
+              <h2>Upcoming Shows</h2>
+              <div id="panelOne">
+                <div id="tabOneInner">Enter a Search Above</div>
+              </div>
+              <div id="panelTwo">
+                <div id="tabTwoInner">Enter a Search Above</div>
+              </div>
+              <div class="clearfix">
+            </div>
+          </div>
+          
+          <div class="mastfoot">
+            <div class="inner">
+              <p>&#169; Copyright 2016</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<script type="text/javascript" src="assets/script/app.js"></script>
+</body>
+</html>
