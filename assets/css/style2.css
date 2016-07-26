@@ -9,6 +9,11 @@ body {
     outline: none !important;
 }
 
+#venueName {
+	font-color:black;
+	font-weight:bold;
+}
+
 #upcoming-container {
 	width: 100%;
 }

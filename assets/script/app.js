@@ -28,6 +28,7 @@ function coordToCityName(lat,long) {
 	                if (results[0]) {
 	                    var add= results[0].formatted_address ;
 	                    var  value=add.split(",");
+	                    console.log
 
 	                    count=value.length;
 	                    country=value[count-1];
@@ -96,6 +97,7 @@ function ajaxBuild(){
     crossDomain: true,
     dataType: 'jsonp'
 	}).done(function(response) {
+		console.log('this is the response',response);
 	    var limit = 0;
 	    for (var i = 0; i < response.length; i++) { 
 			if (limit < 12) { //This for loop returns a MAX of 12 responses but functions correctly if there are less than 12.
@@ -152,7 +154,6 @@ function createShowCard(name, date, venue, city, state, tickets, ticketsURL){
 	} else {
 		ticketStatus = "Sold Out :("
 	}
-	console.log(tickets)
 	var nameInfo = $('<div class="cardName">').append('<p>' + name + '</p>');
 	var dateInfo = $('<div class="cardDate">').append('<p>' + date + ' - ' + city + ' ' + state + '</p>');
 	var venueInfo = $('<div class="cardVenue">').append('<p><u>Venue</u><br>' + venue + '</p>');
@@ -173,8 +174,12 @@ function createShowCard(name, date, venue, city, state, tickets, ticketsURL){
 }
 
 function showMap (response, i) {
+	// console.log('this is lat of venue ',response[i].venue.latitude);
+	// 	console.log('this is lon of venue ',response[i].venue.longitude);
+
 
 	currentVenue = new google.maps.LatLng(response[i].venue.latitude, response[i].venue.longitude);
+    console.log('THIS IS currentVenue',currentVenue);
     function initialize()
     {
      mapProp = {
@@ -191,40 +196,42 @@ function showMap (response, i) {
      $('#tabTwoInner').append(mapDiv).append(line);
      map = new google.maps.Map(document.getElementById(i),mapProp);
 
-    // var marker=new google.maps.Marker({
-    //   position:currentVenue,
-    //   });
+    var marker=new google.maps.Marker({
+      position:currentVenue,
+      });
 
-    // marker.setMap(map);
+    marker.setMap(map);
 
-    var infoBubble = new InfoBubble({
-      map: map,
-      content: "<div id='venuemaker'>"+response[i].venue.name+"</div>",
-      position: currentVenue,
-      shadowStyle: 1,
-      padding: 0,
-      backgroundColor: 'rgb(57,57,57)',
-      borderRadius: 10,
-      arrowSize: 10,
-      borderWidth: 1,
-      borderColor: '#2c2c2c',
-      disableAutoPan: true,
-      hideCloseButton: true,
-      arrowPosition: 30,
-      backgroundClassName: 'transparent',
-      arrowStyle: 2
-    });
+   //  var infoBubble = new InfoBubble({
+   //    map: map,
+   //    content: "<div id='venuemaker'>"+response[i].venue.name+"</div>",
+   //    position: currentVenue,
+   //    shadowStyle: 1,
+   //    padding: 0,
+   //    backgroundColor: 'rgb(57,57,57)',
+   //    borderRadius: 10,
+   //    arrowSize: 10,
+   //    borderWidth: 1,
+   //    borderColor: '#2c2c2c',
+   //    disableAutoPan: true,
+   //    hideCloseButton: true,
+   //    arrowPosition: 30,
+   //    backgroundClassName: 'transparent',
+   //    arrowStyle: 2
+   //  });
 
-   infoBubble.open();
-    // var infowindow = new google.maps.InfoWindow({
-    //       content: response[i].venue.name
-    //       });
+    // infoBubble.open();
+    var venInfo = "<span id='venueName'><strong>"+response[i].venue.name+"</strong></span>";
+     var infowindow = new google.maps.InfoWindow({
+          content: venInfo
+          });
 
-    //     infowindow.open(map,marker);
-    //   }
+         infowindow.open(map,marker);
+      }
+      initialize();
 	}
-initialize();
-}
+
+
 
 
 //http://api.bandsintown.com/events/search.json?location=Boston,MA&page=1&app_id=YOUR_APP_ID
