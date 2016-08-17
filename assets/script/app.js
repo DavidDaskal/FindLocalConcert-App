@@ -91,6 +91,7 @@ $('#search').submit(function(e){ //this is the main function of the page
 });
 
 function ajaxBuild(){
+	console.log('this is query',queryURL)
 	$.ajax({
     url: queryURL, //QueryURL variable is built with the generateURL function.
     method: 'GET',
@@ -138,8 +139,9 @@ function generateURL(solo, artist, city, state){
     } else {
     }
 
-
-    queryURL = "https://api.bandsintown.com/" + introURL + artistQuery + endURL + locationQuery + "&page=1&per_page=10&radius=150&format=json&app_id=Concertch"
+    console.log('hi inside generateURL');
+    queryURL = "https://api.bandsintown.com/" + introURL + artistQuery + endURL + locationQuery + "&api_version=2.0&page=1&per_page=10&radius=150&format=json&app_id=Concertch"
+    console.log('ETA query = '+queryURL);
 }
 
 function createShowCard(name, date, venue, city, state, tickets, ticketsURL){
